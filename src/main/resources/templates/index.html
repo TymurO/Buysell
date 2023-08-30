@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuySell</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header id="header">
+        <div class="panel">
+            <p><a href="http://localhost:8080/log">Login</a></p>
+            <p><a href="#popup">Add new product</a></p>
+        </div>
+    </header>
+    <section>
+        <div class="search">
+            <form action="/products" method="get">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                    <input type="text" placeholder="Name" name="name">
+                </div>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="product-wrapper">
+            <div class="product" th:each="product : ${products}">
+                <div class="product-img">
+                    <img th:src="@{/images/{i}(i=${product.image.id})}">
+                </div>
+                <div class="product-info">
+                    <p th:text="${product.name}">Name</p>
+                    <p th:text="${product.price}">Price</p>
+                    <p th:text="${product.description}">Description</p>
+                </div>
+            </div>
+        </div>
+        <div id="popup" class="popup">
+            <a href="#header" class="popup__area"></a>
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="#header" class="popup__close">X</a>
+                    <div class="popup__title"><p>Add new product</p></div>
+                    <div class="popup_form">
+                        <form action="/products/new" method="post" enctype="multipart/form-data">
+                            <label for="name">Name: </label>
+                            <input type="text" id="name" name="name"><br>
+                            <label for="price">Price: </label>
+                            <input type="text" id="price" name="price"><br>
+                            <label for="description">Description: </label>
+                            <input type="text" id="description" name="description"><br>
+                            <label for="file">Photo: </label>
+                            <input type="file" id="file" name="file"><br>
+                            <input type="submit" value="Add product">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

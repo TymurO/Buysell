@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+    <h3>Add new product</h3>
+    <form action="/products/new" method="post" enctype="multipart/form-data">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name"><br>
+        <label for="price">Price: </label>
+        <input type="text" id="price" name="price"><br>
+        <label for="description">Description: </label>
+        <input type="text" id="description" name="description"><br>
+        <label for="file">Photo: </label>
+        <input type="file" id="file" name="file"><br>
+        <input type="submit" value="Add product">
+    </form>
+</body>
+</html>

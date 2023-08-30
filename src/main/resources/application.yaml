@@ -1,0 +1,16 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/buysell
+    username: postgres
+    password: TimurKiller228
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-circular-references: true
+
+jwt:
+  secret: SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+  lifetime: 30m
