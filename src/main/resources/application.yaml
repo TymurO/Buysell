@@ -1,9 +1,9 @@
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/buysell
-    username: postgres
-    password: TimurKiller228
+#    url: jdbc:postgresql://localhost:5432/buysell
+#    username: postgres
+#    password: TimurKiller228
   jpa:
     show-sql: true
     hibernate:
